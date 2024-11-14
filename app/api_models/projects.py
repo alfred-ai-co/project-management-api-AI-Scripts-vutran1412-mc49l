@@ -7,11 +7,12 @@ class ProjectCreate(BaseModel):
     name: str
     description: Optional[str] = None
 
+    class Config:
+        from_attributes = True
 
 class ProjectResponse(ProjectCreate):
     id: int
     created_at: datetime
-    
+
     class Config:
         from_attributes = True
-
